@@ -14,9 +14,28 @@ contract Cap {
         _;
     }
 
-    function add(UserData calldata user) public onlyOwner {}
+    function add(
+        address user,
+        uint256 balance,
+        address eth_address
+    ) public onlyOwner {
+        require(user != address(0), "Invalid address");
+        require(eth_address != address(0), "Invalid address");
+        require(user != eth_address, "Addresses cannot be the same");
+        require(balance > 0, "Balance must be greater than 0");
 
-    function remove(address user) public onlyOwner {}
+        users[user] = UserData(balance, false, eth_address);
+    }
 
-    function migrate(address user) public onlyOwner {}
+    function remove(address user) public onlyOwner {
+        require(users[user].migrated == false, "Cannot remove migrated user");
+
+        delete users[user];
+    }
+
+    function migrate(address user) public onlyOwner {
+        require(users[user].migrated == false, "User has already migrated");
+
+        users[user].migrated = true;
+    }
 }
