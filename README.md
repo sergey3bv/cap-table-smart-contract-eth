@@ -1,6 +1,8 @@
-# Sample Hardhat Project
+# Solidity cap contract
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a Hardhat Ignition module that deploys that contract.
+Solidity equivalent of [cap smart
+contract](https://github.com/sergey3bv/cap-table-smart-contract-eosio) written
+in C++ for EOS based blockchains.
 
 Try running some of the following tasks:
 
