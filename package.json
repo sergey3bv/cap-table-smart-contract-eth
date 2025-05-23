@@ -1,7 +1,7 @@
 {
-  "name": "test-solana-w-hardhat",
+  "name": "test cap contract",
   "version": "1.0.0",
-  "description": "",
+  "description": "Solidity implementation of https://github.com/sergey3bv/cap-table-smart-contract-eosio",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
